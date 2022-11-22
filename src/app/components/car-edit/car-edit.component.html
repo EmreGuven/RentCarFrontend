@@ -1,0 +1,79 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="title">Araç Güncelle</h5></div>
+      <div class="card-body">
+        <form [formGroup]="carEditForm" (ngSubmit)="updateCar()">
+          <label for="carName">Araç Adı</label>
+          <div class="form-group">
+            <input 
+              type="text"
+              id="carName"
+              formControlName="carName"
+              class="form-control"
+              placeholder="Araç Adı"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="brandId">Marka Adı</label>
+            <div class="form-group">
+                <select id="brandId" formControlName="brandId" class="form-select rounded-0">
+                    <option [value]="null" disabled hidden>Marka Seçiniz</option>
+                    <option *ngFor="let brand of brands" [value]="brand.id">
+                        {{ brand.brandName }}
+                    </option>
+                </select>
+            </div>
+        </div>
+          <label for="description">Açıklama</label>
+          <div class="form-group">
+            <input 
+              type="text"
+              id="description"
+              formControlName="description"
+              class="form-control"
+              placeholder="Açıklama"
+            />
+          </div>
+          <label for="plate">Plaka</label>
+          <div class="form-group">
+            <input 
+              type="text"
+              id="plate"
+              formControlName="plate"
+              class="form-control"
+              placeholder="Plaka"
+            />
+          </div>
+          <label for="state">Durum</label>
+          <div class="form-group">
+            <input 
+              type="text"
+              id="state"
+              formControlName="state"
+              class="form-control"
+              placeholder="Durum"
+            />
+          </div>
+          <label for="plate">Resim</label>
+          <div class="form-group">
+            <input 
+              type="text"
+              id="imgUrl"
+              formControlName="imgUrl"
+              class="form-control"
+              placeholder="Resim Url"
+            />
+          </div>
+          <div class="card-footer d-md-flex justify-content-md-end">
+            <button class="btn btn-fill btn-primary" type="submit"
+                >
+                Kaydet
+            </button>
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>

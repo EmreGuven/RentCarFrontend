@@ -1,0 +1,98 @@
+{
+  "brands": [
+    {
+      "id": 1,
+      "brandName": "Honda"
+    },
+    {
+      "id": 2,
+      "brandName": "Mercedes"
+    },
+    {
+      "id": 3,
+      "brandName": "BMW"
+    },
+    {
+      "brandName": "Tesla",
+      "id": 4
+    },
+    {
+      "brandName": "Suzuki",
+      "id": 5
+    }
+  ],
+  "cars": [
+    {
+      "carName": "Tesla Model X",
+      "brandId": "4",
+      "description": "Elektriks",
+      "plate": "34KKK543",
+      "state": "1",
+      "imgUrl": "https://cdn.euroncap.com/media/72827/tesla-model-s.png?mode=crop&width=359&height=235",
+      "id": 1
+    },
+    {
+      "carName": "Mercedes Sprinter",
+      "brandId": 2,
+      "description": "Dizel",
+      "plate": "34OPL321",
+      "state": "1",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/60847/mercedes-benz-sprinter.png",
+      "id": 2
+    },
+    {
+      "carName": "Mercedes GLE",
+      "brandId": 2,
+      "description": "DİZEL",
+      "plate": "06YTR223",
+      "state": "1",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/58715/mercedes-benz-gle.png",
+      "id": 3
+    },
+    {
+      "carName": "Mercedes-EQ EQE",
+      "brandId": 2,
+      "description": "BENZİN",
+      "plate": "06ERF3121",
+      "state": "1",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/71487/mercedes-eq-eqe.png",
+      "id": 4
+    },
+    {
+      "carName": "BMW iX3",
+      "brandId": 3,
+      "description": "ELEKTRIK",
+      "plate": "34QRE1922",
+      "state": "1",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/65815/bmw-ix3.png",
+      "id": 5
+    },
+    {
+      "carName": "BMW 3 Series",
+      "brandId": 3,
+      "description": "DİZEL",
+      "plate": "35KHJ098",
+      "state": "1",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/58713/bmw-3-series.png",
+      "id": 6
+    },
+    {
+      "carName": "Honda Jazz",
+      "brandId": 1,
+      "description": "DİZEL",
+      "plate": "35KJ9894",
+      "state": "1",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/59108/honda-jazz.png",
+      "id": 7
+    },
+    {
+      "carName": "Suzuki Jimny",
+      "brandId": 5,
+      "description": "DİZEL",
+      "plate": "56YKD32",
+      "state": "1",
+      "imgUrl": "http://euroncap.blob.core.windows.net/media/40155/suzuki-jimny-359-235.jpg",
+      "id": 9
+    }
+  ]
+}

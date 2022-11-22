@@ -1,0 +1,22 @@
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5 class="title">Marka Ekle</h5></div>
+        <div class="card-body">
+          <form [formGroup]="brandAddForm">
+              <label for="carName">Araç Adı</label>
+              <div class="form-group">
+                  <input type="text"formControlName="brandName">
+                  <small *ngIf="brandAddForm.get('brandName').hasError('required') && brandAddForm.get('brandName').touched" class="form-text text-muted">
+                    Ürün adı zorunludur.
+                </small>
+              </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-outline-success" (click)="addBrand()">Ekle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
