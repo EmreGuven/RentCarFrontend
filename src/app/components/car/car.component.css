@@ -11,7 +11,7 @@
     animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 .car-box:hover  .car-name,.car-box:hover .car-price{
-    color:#18e80d;
+    color:#fcb514;
 }
 
 .car-box  .txt{
@@ -84,7 +84,7 @@
     display: inline-block;
     padding: 11px 30px;
     font-size: 13px;
-    background: #68ba5d;
+    background: #fcb514;
     cursor: pointer;
     margin: 6px 0 0;
 }

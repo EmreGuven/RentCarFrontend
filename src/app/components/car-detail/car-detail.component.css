@@ -1,0 +1,66 @@
+.car-details-section{
+    margin:20px 0 0;
+  }
+  .control-prev-icon-hover,.control-next-icon-hover{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .15s ease;
+    border:none;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+    background-color: transparent;
+    border: none;
+  }
+  .carousel-control-next:hover,.carousel-control-prev:hover{
+    opacity: 1;
+  }
+  .carousel-control-next:hover>.control-next-icon-hover
+  ,.carousel-control-prev:hover>.control-prev-icon-hover{
+    opacity: 0.5;
+  }
+  .carousel-inner,.carousel-item,.w-100 {
+    max-height: 400px;
+  }
+  .w-100{
+    object-fit: cover;
+    object-position: center;
+  }
+  .carousel-menu {
+    width: 100%;
+    padding: 5px;
+  }
+  .carousel-menu-img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+  }
+  .carousel-indicators{
+    max-height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin:0;
+  }

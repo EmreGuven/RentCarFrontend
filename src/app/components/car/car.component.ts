@@ -1,6 +1,7 @@
+import { Color } from 'src/app/models/color';
+import { ColorService } from './../../services/color.service';
 import { BrandService } from 'src/app/services/brand.service';
 import { FormGroup } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
@@ -15,11 +16,11 @@ import { Brand } from 'src/app/models/brand';
 export class CarComponent implements OnInit {
   cars: Car[] = [];
   brands:Brand[]=[];
-
+  colors:Color[]=[];
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
-    private toasterService: ToastrService,
+    private colorService:ColorService,
     private brandService:BrandService
     
   ) {}
@@ -30,7 +31,11 @@ export class CarComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       if (params['brandid']) {
         this.getCarsBrandId(params['brandid']);
-      } else {
+      } 
+      else if(params['colorid']){
+        this.getCarsByColorId(params['colorid'])
+      }
+      else {
         this.getCars();
       }
     });
@@ -55,11 +60,10 @@ export class CarComponent implements OnInit {
     });
   }
 
-  deleteCar(id:any){
-    this.carService.deleteCar(id).subscribe(()=>{
-      this.ngOnInit();
-      this.toasterService.success("Silme İşlemi Gerçekleşti", "Tebrikler (:")
-    })
-    
+  getCarsByColorId(colorid:number){
+    this.carService.getCarsColorId(colorid).subscribe((data=>{
+      this.cars = data
+    }))
   }
+  
 }

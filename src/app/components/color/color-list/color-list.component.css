@@ -1,10 +1,10 @@
-.brands-submenu>ul{list-style: none; padding:0;}
-.brands-submenu>ul>li{
+.colors-submenu>ul{list-style: none; padding:0;}
+.colors-submenu>ul>li{
 	display: block;	
 	position: relative;
-	cursor: pointer;
+	cursor:pointer;
 }
-.brands-submenu>ul>li>span{
+.colors-submenu>ul>li>span{
 	color: rgb(36 39 43);
 	text-decoration: none;
 	font-size: 13px;
@@ -18,7 +18,7 @@
 	z-index: 999;
 }
 
-.brands-submenu>ul>li::before{
+.colors-submenu>ul>li::before{
     content: " ";
     position: absolute;
     width: 0;
@@ -27,21 +27,21 @@
     right: 0;
     left: -10px;
 }
-.brands-submenu>ul>.active-in>span{
+.colors-submenu>ul>.active-in>span{
 	color:#fff;
 }
-.brands-submenu>ul>li:hover::before{
+.colors-submenu>ul>li:hover::before{
 	-webkit-animation: active-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: active-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
-.brands-submenu>ul>.active-in::before{
+.colors-submenu>ul>.active-in::before{
 	-webkit-animation: active-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: active-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
-.brands-submenu>ul>.active-out::before{
+.colors-submenu>ul>.active-out::before{
 	-webkit-animation: active-out 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: active-out 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
-.brands-submenu>ul>li:hover span{
+.colors-submenu>ul>li:hover span{
 	color:#fff;
 }

@@ -21,13 +21,15 @@ export class CarService {
     return this.httpClient.get<Car[]>(this.apiUrl + '?brandId=' + brandid);
   }
 
+  getCarsColorId(colorid): Observable<Car[]> {
+    return this.httpClient.get<Car[]>(this.apiUrl + '?colorId=' + colorid);
+  }
+
   getCarById(carid:number):Observable<Car>{
     return this.httpClient.get<Car>(this.apiUrl+ '/' + carid);
   }
 
   getCarDetail(carid): Observable<CarDetail> {
-    console.log("service detail");
-    
     return this.httpClient.get<CarDetail>(this.apiUrl + '/' + carid);
   }
 

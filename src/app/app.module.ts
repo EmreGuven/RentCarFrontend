@@ -15,6 +15,9 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { CarEditComponent } from './components/car-edit/car-edit.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorListComponent } from './components/color/color-list/color-list.component';
+import { ColorAddComponent } from './components/color/color-add/color-add.component';
+import { ColorEditComponent } from './components/color/color-edit/color-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { BrandAddComponent } from './components/brand-add/brand-add.component';
     CarEditComponent,
     CarAddComponent,
     BrandAddComponent,
+    ColorListComponent,
+    ColorAddComponent,
+    ColorEditComponent,
   ],
   imports: [
     BrowserModule,

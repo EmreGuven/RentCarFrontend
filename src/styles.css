@@ -1,1 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    outline: none;
+    padding: 0;
+      margin: 0;
+  }
+  body {
+      background-color: #fff;
+  
+  }
+  
+  @font-face {
+      font-family: 'Open Sans bold';
+      src: url('./assets/fonts/OpenSans-Bold.woff2') format('woff2'),
+          url('./assets/fonts/OpenSans-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'Open Sans';
+      src: url('./assets/fonts/OpenSans.woff2') format('woff2'),
+          url('./assets/fonts/OpenSans.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+  
+  
+  @font-face {
+      font-family: 'Display Pro';
+      src: url("./assets/fonts/PFDinDisplayPro-Light.ttf");
+      font-weight: normal;
+      font-style: normal;
+  }
+  
+  
+  #cars-left-menu{margin:15px 0 0 0;}
+  #cars-left-menu>ul{list-style: none; padding-left:0px;}
+  
+  .leftmenu-list{
+      display: block; 
+      position: relative;
+      padding:5px 10px 10px;
+      border-radius: 5%;
+      background-color: rgb(252 181 20);
+      margin-bottom: 20px;
+      overflow: hidden;
+      z-index: 1;
+  }
+  .leftmenu-list>a{
+      font-family: 'Display Pro';
+      color:rgb(36 39 43);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+      display: block;
+      padding: 10px 10px 0px 10px;
+  }
+  .leftmenu-list>a>i{
+   position: absolute;
+   right: 17px;
+   top: 18px;
+  }
+  
+  @-webkit-keyframes active-in {
+      0% {
+          width: 0%;
+        -webkit-transform: scaleX(0.4);
+                transform: scaleX(0.4);
+        -webkit-transform-origin: 0% 0%;
+                transform-origin: 0% 0%;
+      }
+      100% {
+          width: 110%;
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 0% 0%;
+                transform-origin: 0% 0%;
+      }
+    }
+    @keyframes active-in {
+      0% {
+          width: 0%;
+        -webkit-transform: scaleX(0.4);
+                transform: scaleX(0.4);
+        -webkit-transform-origin: 0% 0%;
+                transform-origin: 0% 0%;
+      }
+  
+      100% {
+          width: 110%;
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 0% 0%;
+                transform-origin: 0% 0%;
+      }
+    }
+    
+  
+    @-webkit-keyframes active-out {
+      0% {
+          width: 110%;
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 0% 0%;
+                transform-origin: 0% 0%;
+      }
+      100% {
+          width: 0%;
+        -webkit-transform: scaleX(0.4);
+                transform: scaleX(0.4);
+        -webkit-transform-origin: 0% 0%;
+                transform-origin: 0% 0%;
+      }
+  
+    }
+    @keyframes active-out {
+      0% {
+          width: 110%;
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 0% 0%;
+                transform-origin: 0% 0%;
+      }
+      100% {
+          width: 0%;
+        -webkit-transform: scaleX(0.4);
+                transform: scaleX(0.4);
+        -webkit-transform-origin: 0% 0%;
+                transform-origin: 0% 0%;
+      }
+  
+  
+    }
+  
+    
+  @-webkit-keyframes slide-fwd-center {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0,0);
+        transform: scale(0,0);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1,1);
+        transform: scale(1,1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+    }
+  }
+  @keyframes slide-fwd-center {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0,0);
+        transform: scale(0,0);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1,1);
+        transform: scale(1,1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+    }
+  }

@@ -19,6 +19,17 @@
                   </select>
               </div>
           </div>
+          <div class="mb-3">
+            <label for="colorId">Renk Adı</label>
+            <div class="form-group">
+                <select id="colorId" formControlName="colorId" class="form-select rounded-0">
+                    <option [value]="null" disabled hidden>Renk Seçiniz</option>
+                    <option *ngFor="let color of colors" [value]="color.id">
+                        {{ color.colorName }}
+                    </option>
+                </select>
+            </div>
+        </div>
             <label for="description">Açıklama</label>
             <div class="form-group">
                 <input type="text" id="description" formControlName="description" class="form-control" placeholder="Açıklama">
@@ -38,7 +49,7 @@
         </form>
       </div>
       <div class="card-footer">
-        <button class="btn btn-outline-success" (click)="addCar()">Ekle</button>
+        <button class="btn btn-fill btn-warning" (click)="addCar()">Ekle</button>
       </div>
     </div>
   </div>

@@ -1,92 +1,87 @@
-<!-- <div class="container">
-  <div class="col-xs-12 col-sm-12 col-md-9">
-    <div class="row my-4">
-      <div class="col md-3" style="padding-left: 8%">
-        <div id="car-tab" class="row clearfix">
-          <div class="d-flex justify-content-center"></div>
-          <div>
-            <button
-              routerLink="/car/add"
-              class="btn btn-info"
-              style="width: 49rem"
-            >
-              Araç Ekle
-            </button>
-          </div>
-          <div
-            class="car-box col-xs-12 col-sm-6 col-md-4"
-            *ngFor="let car of cars"
-          >
-            <div class="car-details">
-              <div class="card" >
-                <img src="{{ car.imgUrl }}" class="car-img" alt="..." />
-                <div class="card-body">
-                  <h5 class="car-name card-title">{{ car.carName }}</h5>
-                  <p class="car-desc txt card-text">{{ car.description }}</p>
-                  <p class="card-text">{{ car.plate }}</p>
-                  <button
-                    routerLink="/cars/detail/{{ car.id }}"
-                    class="car-btn"
-                  >
-                    Car Details
-                  </button>
-                  <button
-                    (click)="deleteCar(car.id)"
-                    style="size: auto"
-                    class="btn btn-danger"
-                  >
-                    Delete
-                  </button>
-                  <button routerLink="/cars/{{ car.id }}" class="btn btn-primary">
-                    Update
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</div> -->
-
 <div class="container">
-  <div class="row clearfix">
-    <a routerLink="/car/add" style="background-color: #68ba5d;" class="btn btn-info col-xs-12 col-sm-12 col-md-9">ARAÇ EKLE</a>
-    <div *ngIf="cars" class="col-xs-12 col-sm-12 col-md-9">
-      <div id="car-tab" class="row clearfix">
+  
+	<div class="row clearfix">
+		<div id="cars-left-menu" class="col-xs-12 col-sm-12 col-md-3">
+			<ul>
+				<app-brand></app-brand>
+        <app-color-list></app-color-list>
+			</ul>
+		</div>
+    
+    
+<div *ngIf="cars" class="col-xs-12 col-sm-12 col-md-9">
+    <div class="row my-4">
+        <!-- <div class="col md-3" style="padding-left: 8%;">
+       <select 
+           class="btn btn-warning"
+           >
+           <option value="0">Marka Seçiniz</option>
+       <option
+           *ngFor="let brand of brands"
+           [value]="brand.id"
+           > {{brand.brandName}}
+       </option>
+       </select>
+        </div> -->
+        <!-- <div class="col-md-3">
+           <select
+           class="btn btn-warning"
+
+             [(ngModel)]="colorFilter"
+             [value]="colorFilter"
+           >
+             <option value="0">Renk Seçiniz</option>
+             <option
+               *ngFor="let color of colors"
+               [value]="color.colorId"
+               [selected]="selectedColor(color.colorId)"
+             >
+               {{ color.colorName }}
+             </option>
+           </select>
+         </div> -->
+         <!-- <div class="col-lg">
+             <div class="d-grid">
+                 <button
+                 [disabled]="brandFilter==0 || colorFilter ==0"
+                 class="btn btn-warning"
+                 routerLink="/filter/{{brandFilter}}/{{colorFilter}}"
+                 >
+                   <i class="bi-search me-1"></i>Filtrele
+                 </button>
+             </div>
+         </div> -->
+   </div>
+  <div id="car-tab" class="row clearfix">
+    
         <div class="d-flex justify-content-center"></div>
-        <div
-          class="car-box col-xs-12 col-sm-6 col-md-4"
-          *ngFor="let car of cars"
-        >
-          <div class="car-details">
-            <h4 class="car-name txt">{{ car.carName }}</h4>
-            <p class="car-desc txt">{{ car.description }}</p>
+        <a routerLink="/car/add" style="background-color: #fcb514;" class="btn btn-warning ">ARAÇ EKLE</a>
+  <div class="car-box col-xs-12 col-sm-6 col-md-4" *ngFor="let car of cars">
+      <div class="car-details" >
+          <h4 class="car-name txt">{{ car.carName }}</h4>
+          <p class="car-desc txt">{{ car.description }}</p>
 
-            <tr>
-              <td>
-                <img class="car-img" src="{{ car.imgUrl }}" />
-              </td>
-            </tr>
+          <tr>
+          <td>
+          <img class="car-img" src="{{car.imgUrl}}" />
+          </td>
+          </tr>
+         
+          <p class="car-detail-title">MARKA</p>
+          <p class="car-detail-title">RENK</p>
+          <span class="car-brand car-detail">{{ car.brandId }}</span>
+          <span class="car-color car-detail">{{ car.colorId }}</span>
 
-            <!-- <p  class="car-detail-title">MARKA</p>
-            <span  class="car-brand car-detail">{{car.brandId}}</span> -->
-
-
-            <a class="car-btn" routerLink="/cars/detail/{{ car.id }}"
-              >ARACI DETAYLI İNCELE</a
-            >
-            <a class="car-btn" routerLink="/cars/{{ car.id }}"
-              >DÜZENLE</a
-            >
-            <a class="car-btn" (click)="deleteCar(car.id)"
-              >SİL</a
-            >
-          </div>
+          <a class="car-btn" routerLink="/cars/detail/{{car.id}}" >ARACI DETAYLI İNCELE</a>
+          <!-- -->
         </div>
-      </div>
-    </div>
   </div>
+
+
+  </div>
+
+</div>
+
+</div>
+
 </div>

@@ -1,3 +1,5 @@
+import { ColorService } from './../../services/color.service';
+import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
 import { ActivatedRoute } from '@angular/router';
 import { Brand } from './../../models/brand';
@@ -23,6 +25,7 @@ export class CarEditComponent implements OnInit {
   carEditForm: FormGroup;
   car:Car
   brands:Brand[];
+  colors:Color[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,12 +33,14 @@ export class CarEditComponent implements OnInit {
     private toasterService: ToastrService,
     private activatedRoute:ActivatedRoute,
     private location:Location,
-    private brandService:BrandService
+    private brandService:BrandService,
+    private colorService:ColorService
   ) {}
 
   ngOnInit(): void {
-    this.getBrands()
-    this.getCarDataForm()
+    this.getColors();
+    this.getBrands();
+    this.getCarDataForm();
     this.createCarEditForm();
 
   }
@@ -46,7 +51,6 @@ export class CarEditComponent implements OnInit {
   }
 
   updateCar(){
-    console.log(this.carEditForm.value);
     this.carService.updateCar(this.activatedRoute.snapshot.params["id"],this.carEditForm.value)
     .subscribe(()=>{
       this.toasterService.success("Araç Bilgileri Güncellendi", "Tebrikler (:")
@@ -59,6 +63,7 @@ export class CarEditComponent implements OnInit {
     this.carEditForm = this.formBuilder.group({
       carName: [null, Validators.required],
       brandId: [null, Validators.required],
+      colorId: [null, Validators.required],
       description: [null, Validators.required],
       plate: [null, Validators.required],
       state: [null, Validators.required],
@@ -70,6 +75,7 @@ export class CarEditComponent implements OnInit {
       this.carEditForm = new FormGroup({
         carName: new FormControl(result['carName']),
         brandId: new FormControl(result['brandId']),
+        colorId: new FormControl(result['colorId']),
         description: new FormControl(result['description']),
         plate: new FormControl(result['plate']),
         state:new FormControl(result['state']),
@@ -81,6 +87,14 @@ export class CarEditComponent implements OnInit {
   getBrands(){
     this.brandService.getBrands().subscribe((data)=>{
       this.brands=data
+    })
+  }
+
+  getColors(){
+    this.colorService.getColors().subscribe((data)=>{
+      this.colors = data;
+      console.log(data);
+      
     })
   }
 

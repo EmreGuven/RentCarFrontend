@@ -20,5 +20,13 @@ export class BrandService {
     return this.httpClient.post(this.apiUrl,brand)
   }
 
+  updateBrand(brand:Brand):Observable<Brand>{
+    return this.httpClient.post<Brand>(this.apiUrl,brand)
+  }
+
+  getBrandById(brandId:number):Observable<Brand>{
+    return this.httpClient.get<Brand>(this.apiUrl+"?brandId="+brandId)
+  }
+
   
 }

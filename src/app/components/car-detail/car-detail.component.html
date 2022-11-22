@@ -1,8 +1,10 @@
-<div class="card" style="width: 18rem;">
-    <img src="{{carDetail.imgUrl}}" class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">{{carDetail.carName}}</h5>
-      <p class="card-text">{{carDetail.description}}</p>
-      <p class="card-text">{{carDetail.plate}}</p>
-    </div>
+<div class="card" style="width: 18rem">
+  <img src="{{ carDetail.imgUrl }}" class="card-img-top" />
+  <div class="card-body">
+    <h5 class="card-title">{{ carDetail.carName }}</h5>
+    <p class="card-text">{{ carDetail.description }}</p>
+    <p class="card-text">{{ carDetail.plate }}</p>
+    <a class="btn btn-warning" routerLink="/cars/{{ carDetail.id }}">DÜZENLE</a>
+    <a class="btn btn-warning" (click)="deleteCar(carDetail.id)">SİL</a>
   </div>
+</div>

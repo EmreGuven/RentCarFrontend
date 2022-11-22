@@ -1,3 +1,5 @@
+import { ActivatedRoute } from '@angular/router';
+import { ColorService } from './../../services/color.service';
 import { BrandService } from 'src/app/services/brand.service';
 import { ToastrService } from 'ngx-toastr';
 import { CarService } from 'src/app/services/car.service';
@@ -8,6 +10,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Brand } from 'src/app/models/brand';
+import { Color } from 'src/app/models/color';
 
 @Component({
   selector: 'app-car-add',
@@ -19,23 +22,38 @@ export class CarAddComponent implements OnInit {
   
   carAddForm: FormGroup;
   brands:Brand[];
+  colors:Color[];
   
   constructor(
     private formBuilder: FormBuilder,
     private carService: CarService,
     private toasterService: ToastrService,
-    private brandService:BrandService
+    private brandService:BrandService,
+    private colorService:ColorService,
+    private activatedroute:ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.getBrands();
     this.createCarAddForm();
+    this.activatedroute.params.subscribe((params)=>{
+      this.brandService.getBrands().subscribe((data)=>{
+        this.brands=data
+        console.log(data);
+        
+      });
+      this.colorService.getColors().subscribe((data)=>{
+        this.colors=data
+        console.log(data);
+        
+      });
+    })
   }
 
   createCarAddForm() {
     this.carAddForm = this.formBuilder.group({
       carName: ['', Validators.required],
       brandId: ['', Validators.required],
+      colorId: ['', Validators.required],
       description: ['', Validators.required],
       plate: ['', Validators.required],
       state: ['', Validators.required],
@@ -63,6 +81,12 @@ export class CarAddComponent implements OnInit {
   getBrands(){
     this.brandService.getBrands().subscribe((data)=>{
       this.brands=data
+    })
+  }
+
+  getColors(){
+    this.colorService.getColors().subscribe((data)=>{
+      this.colors=data
     })
   }
 }

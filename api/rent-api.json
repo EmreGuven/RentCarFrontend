@@ -17,82 +17,112 @@
       "id": 4
     },
     {
-      "brandName": "Suzuki",
+      "brandName": "Volkswagen",
       "id": 5
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "colorName": "Gri"
+    },
+    {
+      "id": 2,
+      "colorName": "Kırmızı"
+    },
+    {
+      "id": 3,
+      "colorName": "Sarı"
+    },
+    {
+      "id": 4,
+      "colorName": "Mavi"
+    },
+    {
+      "id": 5,
+      "colorName": "Beyaz"
     }
   ],
   "cars": [
     {
-      "carName": "Tesla Model X",
-      "brandId": "4",
-      "description": "Elektriks",
-      "plate": "34KKK543",
+      "carName": "BMW 3 Series",
+      "brandId": "3",
+      "colorId": "5",
+      "description": "Dizel",
+      "plate": "34QRE1922",
       "state": "1",
-      "imgUrl": "https://cdn.euroncap.com/media/72827/tesla-model-s.png?mode=crop&width=359&height=235",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/58713/bmw-3-series.png",
       "id": 1
     },
     {
-      "carName": "Mercedes Sprinter",
-      "brandId": 2,
-      "description": "Dizel",
-      "plate": "34OPL321",
+      "carName": "Tesla Model X",
+      "brandId": "4",
+      "colorId": "2",
+      "description": "Elektrik",
+      "plate": "34KKK543",
       "state": "1",
-      "imgUrl": "https://euroncap.blob.core.windows.net/media/60847/mercedes-benz-sprinter.png",
+      "imgUrl": "https://cdn.euroncap.com/media/72827/tesla-model-s.png?mode=crop&width=359&height=235",
       "id": 2
     },
     {
-      "carName": "Mercedes GLE",
-      "brandId": 2,
-      "description": "DİZEL",
-      "plate": "06YTR223",
+      "carName": "Mercedes-Benz GLE",
+      "brandId": "2",
+      "colorId": "5",
+      "description": "Benzin",
+      "plate": "34KKK543",
       "state": "1",
       "imgUrl": "https://euroncap.blob.core.windows.net/media/58715/mercedes-benz-gle.png",
       "id": 3
     },
     {
-      "carName": "Mercedes-EQ EQE",
-      "brandId": 2,
-      "description": "BENZİN",
-      "plate": "06ERF3121",
+      "carName": "Mercedes-Benz Vito",
+      "brandId": "2",
+      "colorId": "1",
+      "description": "Dizel",
+      "plate": "34QRE1922",
       "state": "1",
-      "imgUrl": "https://euroncap.blob.core.windows.net/media/71487/mercedes-eq-eqe.png",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/60848/mercedes-benz-vito.png",
       "id": 4
     },
     {
-      "carName": "BMW iX3",
-      "brandId": 3,
-      "description": "ELEKTRIK",
-      "plate": "34QRE1922",
+      "carName": "Volkswagen T-Cross",
+      "brandId": "5",
+      "colorId": "4",
+      "description": "Dizel",
+      "plate": "34KKK543",
       "state": "1",
-      "imgUrl": "https://euroncap.blob.core.windows.net/media/65815/bmw-ix3.png",
+      "imgUrl": "http://euroncap.blob.core.windows.net/media/45060/volkswagen-t-cross.jpg",
       "id": 5
     },
     {
-      "carName": "BMW 3 Series",
-      "brandId": 3,
-      "description": "DİZEL",
-      "plate": "35KHJ098",
+      "carName": "Volkswagen Sharan",
+      "brandId": "5",
+      "colorId": "4",
+      "description": "Benzin",
+      "plate": "06CFR333",
       "state": "1",
-      "imgUrl": "https://euroncap.blob.core.windows.net/media/58713/bmw-3-series.png",
+      "imgUrl": "http://euroncap.blob.core.windows.net/media/56149/volkswagen-sharan.png",
       "id": 6
     },
     {
-      "carName": "Honda Jazz",
-      "brandId": 1,
-      "description": "DİZEL",
-      "plate": "35KJ9894",
+      "carName": "Honda e",
+      "brandId": "1",
+      "colorId": "5",
+      "description": "Elektrik",
+      "plate": "34QRE1922",
       "state": "1",
-      "imgUrl": "https://euroncap.blob.core.windows.net/media/59108/honda-jazz.png",
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/60161/honda-e.png",
       "id": 7
     },
     {
-      "carName": "Suzuki Jimny",
-      "brandId": 5,
-      "description": "DİZEL",
-      "plate": "56YKD32",
+      "carName": "Honda Jazz",
+      "brandId": "1",
+      "colorId": "4",
+      "description": "Dizel",
+      "plate": "34KKK543",
       "state": "1",
-      "imgUrl": "http://euroncap.blob.core.windows.net/media/40155/suzuki-jimny-359-235.jpg",
-      "id": 9
+      "imgUrl": "https://euroncap.blob.core.windows.net/media/59108/honda-jazz.png",
+      "id": 8
     }
   ]
 }

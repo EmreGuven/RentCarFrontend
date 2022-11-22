@@ -14,6 +14,7 @@ import {
   styleUrls: ['./brand-add.component.css'],
 })
 export class BrandAddComponent implements OnInit {
+  
   brandAddForm: FormGroup;
 
   constructor(
