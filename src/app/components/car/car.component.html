@@ -1,89 +1,87 @@
 <div class="container">
-  
-	<div class="row clearfix">
-		<div id="cars-left-menu" class="col-xs-12 col-sm-12 col-md-3">
-			<ul>
-				<app-brand></app-brand>
+  <div class="row clearfix">
+    <div id="cars-left-menu" class="col-xs-12 col-sm-12 col-md-3">
+      <ul>
+        <app-brand></app-brand>
         <app-color-list></app-color-list>
-			</ul>
-		</div>
-    
-    
-<div *ngIf="cars" class="col-xs-12 col-sm-12 col-md-9">
-    <div class="row my-4">
-      <div class="col md-3" style="padding-left: 8%;">
-        <select 
+      </ul>
+    </div>
+
+    <div *ngIf="cars" class="col-xs-12 col-sm-12 col-md-9">
+      <div class="row my-4">
+        <div class="col md-3" style="padding-left: 8%">
+          <select
             class="btn btn-warning"
             [(ngModel)]="brandFilter"
-            [value]="brandFilter" 
-            >
+            [value]="brandFilter"
+          >
             <option value="0">Marka Seçiniz</option>
-        <option
-            *ngFor="let brand of brands"
-            [value]="brand.id"
-            [selected]="selectedBrand(brand.id)"
-            > {{brand.brandName}}
-        </option>
-        </select>
-         </div>
+            <option
+              *ngFor="let brand of brands"
+              [value]="brand.id"
+              [selected]="selectedBrand(brand.id)"
+            >
+              {{ brand.brandName }}
+            </option>
+          </select>
+        </div>
         <div class="col-md-3">
-           <select
+          <select
             class="btn btn-warning"
             [(ngModel)]="colorFilter"
             [value]="colorFilter"
-           >
-             <option value="0">Renk Seçiniz</option>
-             <option
-               *ngFor="let color of colors"
-               [value]="color.id"
-               [selected]="selectedColor(color.id)"
-             > {{color.colorName}}
-             </option>
-           </select>
-         </div>
-         <div class="col-lg">
-             <div class="d-grid">
-                 <button
-                 [disabled]="brandFilter==0 || colorFilter ==0"
-                 class="btn btn-warning"
-                 routerLink="/filter/{{brandFilter}}/{{colorFilter}}"
-                 >
-                   <i class="bi-search me-1"></i>Filtrele
-                 </button>
-             </div>
-         </div>
-   </div>
-  <div id="car-tab" class="row clearfix">
-    
+          >
+            <option value="0">Renk Seçiniz</option>
+            <option
+              *ngFor="let color of colors"
+              [value]="color.id"
+              [selected]="selectedColor(color.id)"
+            >
+              {{ color.colorName }}
+            </option>
+          </select>
+        </div>
+        <div class="col-lg">
+          <div class="d-grid">
+            <button
+              [disabled]="brandFilter == 0 || colorFilter == 0"
+              class="btn btn-warning"
+              routerLink="/filter/{{ brandFilter }}/{{ colorFilter }}"
+            >
+              <i class="bi-search me-1"></i>Filtrele
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="car-tab" class="row clearfix">
         <div class="d-flex justify-content-center"></div>
         <!-- <a routerLink="/car/add" style="background-color: #fcb514;" class="btn btn-warning ">ARAÇ EKLE</a> -->
-        
-  <div class="car-box col-xs-12 col-sm-6 col-md-4" *ngFor="let car of cars">
-      <div class="car-details" >
-          <h4 class="car-name txt">{{ car.carName }}</h4>
-          <p class="car-desc txt">{{ car.description }}</p>
 
-          <tr>
-          <td>
-          <img class="car-img" src="{{car.imgUrl}}" />
-          </td>
-          </tr>
-         
-          <p class="car-detail-title">MARKA</p>
-          <p class="car-detail-title">RENK</p>
-          <span class="car-brand car-detail">{{ car.brandId }}</span>
-          <span class="car-color car-detail">{{ car.colorId }}</span>
+        <div
+          class="car-box col-xs-12 col-sm-6 col-md-4"
+          *ngFor="let car of cars"
+        >
+          <div class="car-details">
+            <h4 class="car-name txt">{{ car.carName }}</h4>
+            <p class="car-desc txt">{{ car.description }}</p>
 
-          <a class="car-btn" routerLink="/cars/detail/{{car.id}}" >ARACI DETAYLI İNCELE</a>
-          <!-- -->
+            <tr>
+              <td>
+                <img class="car-img" src="{{ car.imgUrl }}" />
+              </td>
+            </tr>
+
+            <p class="car-detail-title">MARKA</p>
+            <p class="car-detail-title">RENK</p>
+            <span class="car-brand car-detail">{{ car.brandId }}</span>
+            <span class="car-color car-detail">{{ car.colorId }}</span>
+
+            <a class="car-btn" routerLink="/cars/detail/{{ car.id }}"
+              >ARACI DETAYLI İNCELE</a
+            >
+          </div>
         </div>
+      </div>
+    </div>
   </div>
-
-
-  </div>
-
-</div>
-
-</div>
-
 </div>

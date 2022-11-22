@@ -99,8 +99,6 @@ export class CarComponent implements OnInit {
 
   selectedBrand(brandId:number){
     if(this.brandFilter==brandId){
-      console.log(brandId);
-      
       return true;
     } else{
       return false;
