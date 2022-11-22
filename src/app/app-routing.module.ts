@@ -13,12 +13,13 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarComponent },
   { path: 'cars/brand/:brandid', component: CarComponent },
   { path: 'cars/color/:colorid', component: CarComponent },
+  { path: "filter/:brandId/:colorId", component: CarComponent },
   { path: "cars/:id" , component:CarEditComponent},
   { path: 'cars/detail/:id', component: CarDetailComponent },
   { path: "car/add" , component:CarAddComponent},
   { path: "brand/add" , component:BrandAddComponent},
   { path: "brands", component:BrandComponent},
-  { path: "colors", component:ColorListComponent}
+  { path: "color/:colorid", component:CarComponent}
 ];
 
 @NgModule({

@@ -18,6 +18,8 @@ import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { ColorListComponent } from './components/color/color-list/color-list.component';
 import { ColorAddComponent } from './components/color/color-add/color-add.component';
 import { ColorEditComponent } from './components/color/color-edit/color-edit.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,10 +34,12 @@ import { ColorEditComponent } from './components/color/color-edit/color-edit.com
     ColorListComponent,
     ColorAddComponent,
     ColorEditComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,

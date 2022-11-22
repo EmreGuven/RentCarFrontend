@@ -11,36 +11,37 @@
     
 <div *ngIf="cars" class="col-xs-12 col-sm-12 col-md-9">
     <div class="row my-4">
-        <!-- <div class="col md-3" style="padding-left: 8%;">
-       <select 
-           class="btn btn-warning"
-           >
-           <option value="0">Marka Seçiniz</option>
-       <option
-           *ngFor="let brand of brands"
-           [value]="brand.id"
-           > {{brand.brandName}}
-       </option>
-       </select>
-        </div> -->
-        <!-- <div class="col-md-3">
+      <div class="col md-3" style="padding-left: 8%;">
+        <select 
+            class="btn btn-warning"
+            [(ngModel)]="brandFilter"
+            [value]="brandFilter" 
+            >
+            <option value="0">Marka Seçiniz</option>
+        <option
+            *ngFor="let brand of brands"
+            [value]="brand.id"
+            [selected]="selectedBrand(brand.id)"
+            > {{brand.brandName}}
+        </option>
+        </select>
+         </div>
+        <div class="col-md-3">
            <select
-           class="btn btn-warning"
-
-             [(ngModel)]="colorFilter"
-             [value]="colorFilter"
+            class="btn btn-warning"
+            [(ngModel)]="colorFilter"
+            [value]="colorFilter"
            >
              <option value="0">Renk Seçiniz</option>
              <option
                *ngFor="let color of colors"
-               [value]="color.colorId"
-               [selected]="selectedColor(color.colorId)"
-             >
-               {{ color.colorName }}
+               [value]="color.id"
+               [selected]="selectedColor(color.id)"
+             > {{color.colorName}}
              </option>
            </select>
-         </div> -->
-         <!-- <div class="col-lg">
+         </div>
+         <div class="col-lg">
              <div class="d-grid">
                  <button
                  [disabled]="brandFilter==0 || colorFilter ==0"
@@ -50,12 +51,13 @@
                    <i class="bi-search me-1"></i>Filtrele
                  </button>
              </div>
-         </div> -->
+         </div>
    </div>
   <div id="car-tab" class="row clearfix">
     
         <div class="d-flex justify-content-center"></div>
-        <a routerLink="/car/add" style="background-color: #fcb514;" class="btn btn-warning ">ARAÇ EKLE</a>
+        <!-- <a routerLink="/car/add" style="background-color: #fcb514;" class="btn btn-warning ">ARAÇ EKLE</a> -->
+        
   <div class="car-box col-xs-12 col-sm-6 col-md-4" *ngFor="let car of cars">
       <div class="car-details" >
           <h4 class="car-name txt">{{ car.carName }}</h4>

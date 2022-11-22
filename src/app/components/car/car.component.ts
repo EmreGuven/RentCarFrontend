@@ -17,6 +17,10 @@ export class CarComponent implements OnInit {
   cars: Car[] = [];
   brands:Brand[]=[];
   colors:Color[]=[];
+  colorFilter:number=0;
+  brandFilter:number=0;
+  filterText:"";
+
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
@@ -26,10 +30,14 @@ export class CarComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    this.getBrands();
 
-    this.activatedRoute.params.subscribe((params) => {
-      if (params['brandid']) {
+    this.activatedRoute.params.subscribe((params) => {  
+      if(params['brandId'] && params['colorId']){
+        this.brandFilter == params['brandId'];
+        this.brandFilter == params['colorId'];
+        this.getByBrandAndColor(params['brandId'],params['colorId'])
+      }
+      else  if (params['brandid']) {
         this.getCarsBrandId(params['brandid']);
       } 
       else if(params['colorid']){
@@ -39,12 +47,25 @@ export class CarComponent implements OnInit {
         this.getCars();
       }
     });
+    this.getBrands();
+    this.getColors();
+  }
+
+  getByBrandAndColor(brandId:number,colorId:number){
+    this.carService.getByBrandAndColor(brandId,colorId).subscribe((data)=>{
+      this.cars = data
+    })
   }
 
   getBrands(){
     this.brandService.getBrands().subscribe((data)=>{
       this.brands=data
       //console.log(data);
+    })
+  }
+  getColors(){
+    this.colorService.getColors().subscribe((data)=>{
+      this.colors=data
     })
   }
   
@@ -64,6 +85,26 @@ export class CarComponent implements OnInit {
     this.carService.getCarsColorId(colorid).subscribe((data=>{
       this.cars = data
     }))
+  }
+
+  selectedColor(colorId:number){
+    if(this.colorFilter==colorId){
+      console.log(colorId);
+      
+      return true;
+    } else{
+      return false;
+    }
+  }
+
+  selectedBrand(brandId:number){
+    if(this.brandFilter==brandId){
+      console.log(brandId);
+      
+      return true;
+    } else{
+      return false;
+    }
   }
   
 }

@@ -1,3 +1,4 @@
+import { Car } from 'src/app/models/car';
 import { Color } from './../models/color';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
