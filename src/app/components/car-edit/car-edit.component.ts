@@ -93,8 +93,6 @@ export class CarEditComponent implements OnInit {
   getColors(){
     this.colorService.getColors().subscribe((data)=>{
       this.colors = data;
-      console.log(data);
-      
     })
   }
 

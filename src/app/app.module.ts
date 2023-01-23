@@ -20,6 +20,7 @@ import { ColorAddComponent } from './components/color/color-add/color-add.compon
 import { ColorEditComponent } from './components/color/color-edit/color-edit.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { FilterBrandNamePipe } from './pipes/filter-brand-name.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     ColorAddComponent,
     ColorEditComponent,
     FilterPipe,
+    FilterBrandNamePipe,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
-import { environment } from './../../environments/environment';
 import { CarDetail } from './../models/car-detail';
-import { Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Car } from '../models/car';
+
 
 @Injectable({
   providedIn: 'root',
@@ -49,4 +49,18 @@ export class CarService {
     
     return this.httpClient.delete(this.apiUrl+'/'+id)
   }
+
+  getCarWithBrandName(id:number):Observable<any>{
+    return this.httpClient.get<any>(this.apiUrl+"/"+id).pipe(
+      switchMap((car:any)=>{
+        return this.httpClient.get("http://localhost:3000/brands/" + car.brandId).pipe(
+          map((brand: any) => {
+            car.brand = brand;
+            return car;
+          })
+        );
+      })
+    )
+  }
 }
+

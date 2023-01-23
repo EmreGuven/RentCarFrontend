@@ -38,13 +38,9 @@ export class CarAddComponent implements OnInit {
     this.activatedroute.params.subscribe((params)=>{
       this.brandService.getBrands().subscribe((data)=>{
         this.brands=data
-        console.log(data);
-        
       });
       this.colorService.getColors().subscribe((data)=>{
         this.colors=data
-        console.log(data);
-        
       });
     })
   }
