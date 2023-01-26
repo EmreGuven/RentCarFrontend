@@ -67,7 +67,7 @@ export class CarAddComponent implements OnInit {
         this.toasterService.success('Araç Eklendi', 'Tebrikler (:');
       });
     } else {
-      this.toasterService.error('Eksik Bilgi', '!!!');
+      this.toasterService.error('Eksik Bilgi', '!');
     }
   }
   clearForm(){
